@@ -1,4 +1,4 @@
-export const CartActions = {
+export const ProductActions = {
   INCREMENT: "INCREMENT",
   DECREMENT: "DECREMENT",
 };

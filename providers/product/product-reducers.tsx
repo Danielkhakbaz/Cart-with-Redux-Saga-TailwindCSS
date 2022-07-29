@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { CartActions } from "./cart-actions";
+import { ProductActions } from "./product-actions";
 
 const initialState: any = [
   {
@@ -28,15 +28,17 @@ const initialState: any = [
   },
 ];
 
-const CartReducers = (
+const ProductReducers = (
   state = initialState,
   action: { type: any; payload: any }
 ) => {
   switch (action.type) {
-    case CartActions.INCREMENT: {
+    case ProductActions.INCREMENT: {
+      const incrementedProduct = action.payload;
+
       const newProducts = state.products.map((product: any) => {
-        if (action.payload.id === product.id) {
-          return { ...action.payload, quantity: product.quantity + 1 };
+        if (incrementedProduct.id === product.id) {
+          return { ...incrementedProduct, quantity: product.quantity + 1 };
         }
         return product;
       });
@@ -46,10 +48,12 @@ const CartReducers = (
         products: newProducts,
       };
     }
-    case CartActions.DECREMENT: {
+    case ProductActions.DECREMENT: {
+      const decrementedProduct = action.payload;
+
       const newProducts = state.products.map((product: any) => {
-        if (action.payload.id === product.id) {
-          return { ...action.payload, quantity: product.quantity - 1 };
+        if (decrementedProduct.id === product.id) {
+          return { ...decrementedProduct, quantity: product.quantity - 1 };
         }
         return product;
       });
@@ -65,5 +69,5 @@ const CartReducers = (
 };
 
 export const Reducers = combineReducers({
-  CartReducers,
+  ProductReducers,
 });

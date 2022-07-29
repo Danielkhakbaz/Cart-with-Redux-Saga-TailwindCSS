@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { CartActions } from "../../providers/cart/cart-actions";
-import { Post } from "../../types/post";
+import { ProductActions } from "../../providers/product/product-actions";
+import { Product } from "../../types/product";
 
 type Props = {
-  post: Post;
+  product: Product;
 };
 
-const Card: React.FC<Props> = ({ post }) => {
+const Card: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
@@ -24,21 +24,21 @@ const Card: React.FC<Props> = ({ post }) => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">{post.title}</h2>
+          <h2 className="card-title">{product.title}</h2>
           <div className="card-actions flex justify-center items-center my-2">
             <button
               className="btn btn-error text-white"
               onClick={() =>
-                dispatch({ type: CartActions.DECREMENT, payload: post })
+                dispatch({ type: ProductActions.DECREMENT, payload: product })
               }
-              disabled={post.quantity === 0}>
+              disabled={product.quantity === 0}>
               -
             </button>
-            <p className="font-bold mx-2">{String(post.quantity)}</p>
+            <p className="font-bold mx-2">{String(product.quantity)}</p>
             <button
               className="btn btn-success text-white"
               onClick={() =>
-                dispatch({ type: CartActions.INCREMENT, payload: post })
+                dispatch({ type: ProductActions.INCREMENT, payload: product })
               }>
               +
             </button>
