@@ -1,0 +1,18 @@
+{
+  "data": {
+    "posts": [
+      {
+        "title": "Gaming PC",
+        "quantity": 1
+      },
+      {
+        "title": "Macbook Air 2020",
+        "quantity": 2
+      },
+      {
+        "title": "IPhone 12",
+        "quantity": 3
+      }
+    ]
+  }
+}
