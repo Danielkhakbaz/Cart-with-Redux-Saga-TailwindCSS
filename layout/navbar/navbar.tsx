@@ -3,9 +3,7 @@ const Navbar: React.FC = () => {
     <>
       <div className="navbar bg-gray-800">
         <div className="flex-1">
-          <p className="normal-case text-xl text-white">
-            Cart w/ Danial Khakbaz
-          </p>
+          <p className="normal-case text-xl text-white">Cart</p>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">

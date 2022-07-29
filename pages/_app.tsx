@@ -1,12 +1,17 @@
 import type { AppProps } from "next/app";
+import Compose from "../utils/compose/compose";
 import Layout from "../layout/layout";
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const Providers = [Layout];
+
   return (
-    <Layout>
+    <Compose providers={Providers}>
+      {/* <Layout> */}
       <Component {...pageProps} />
-    </Layout>
+      {/* </Layout> */}
+    </Compose>
   );
 };
 
