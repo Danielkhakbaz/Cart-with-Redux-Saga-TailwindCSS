@@ -2,16 +2,20 @@
   "data": {
     "posts": [
       {
-        "title": "Gaming PC",
+        "title": "Product No.1",
         "quantity": 1
       },
       {
-        "title": "Macbook Air 2020",
+        "title": "Product No.2",
         "quantity": 2
       },
       {
-        "title": "IPhone 12",
+        "title": "Product No.3",
         "quantity": 3
+      },
+      {
+        "title": "Product No.4",
+        "quantity": 4
       }
     ]
   }
