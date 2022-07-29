@@ -16,7 +16,7 @@ const Card: React.FC<Props> = ({ product }) => {
         <figure className="px-10 pt-10">
           <Image
             className="rounded-xl"
-            src="https://placeimg.com/400/225/arch"
+            src={product.image}
             width={304}
             height={171}
             layout="fixed"

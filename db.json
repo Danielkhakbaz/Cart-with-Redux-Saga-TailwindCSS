@@ -4,21 +4,25 @@
       {
         "id": 1,
         "title": "Product No.1",
+        "image": "https://placeimg.com/400/225",
         "quantity": 0
       },
       {
         "id": 2,
         "title": "Product No.2",
+        "image": "https://placeimg.com/400/225",
         "quantity": 0
       },
       {
         "id": 3,
         "title": "Product No.3",
+        "image": "https://placeimg.com/400/225",
         "quantity": 0
       },
       {
         "id": 4,
         "title": "Product No.4",
+        "image": "https://placeimg.com/400/225",
         "quantity": 0
       }
     ]
