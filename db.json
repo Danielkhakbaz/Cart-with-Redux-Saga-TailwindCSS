@@ -2,18 +2,22 @@
   "data": {
     "posts": [
       {
+        "id": 1,
         "title": "Product No.1",
         "quantity": 1
       },
       {
+        "id": 2,
         "title": "Product No.2",
         "quantity": 2
       },
       {
+        "id": 3,
         "title": "Product No.3",
         "quantity": 3
       },
       {
+        "id": 4,
         "title": "Product No.4",
         "quantity": 4
       }
