@@ -4,7 +4,7 @@ const MyDocument: React.FC = () => {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/Favicon.png" />
       </Head>
 
       <body>

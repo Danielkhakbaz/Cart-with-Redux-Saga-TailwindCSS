@@ -5,7 +5,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Home | Cart Web Application</title>
       </Head>
       <></>
     </>
