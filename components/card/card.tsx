@@ -22,7 +22,11 @@ const Card: React.FC<Props> = ({ post }) => {
         <div className="card-body items-center text-center">
           <h2 className="card-title">{post.title}</h2>
           <div className="card-actions flex justify-center items-center my-2">
-            <button className="btn btn-error text-white">-</button>
+            <button
+              className="btn btn-error text-white"
+              disabled={post.quantity === 0}>
+              -
+            </button>
             <p className="font-bold mx-2">{String(post.quantity)}</p>
             <button className="btn btn-success text-white">+</button>
           </div>
