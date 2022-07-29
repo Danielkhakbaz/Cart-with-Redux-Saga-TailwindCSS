@@ -1,17 +1,16 @@
 import type { AppProps } from "next/app";
-import Compose from "../utils/compose/compose";
+import { Provider } from "react-redux";
 import Layout from "../layout/layout";
+import { Store } from "../providers/cart/cart-store";
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const Providers = [Layout];
-
   return (
-    <Compose providers={Providers}>
-      {/* <Layout> */}
-      <Component {...pageProps} />
-      {/* </Layout> */}
-    </Compose>
+    <Provider store={Store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 };
 

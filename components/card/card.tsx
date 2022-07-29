@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { CartActions } from "../../providers/cart/cart-actions";
 import { Post } from "../../types/post";
 
 type Props = {
@@ -6,6 +8,8 @@ type Props = {
 };
 
 const Card: React.FC<Props> = ({ post }) => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -24,11 +28,20 @@ const Card: React.FC<Props> = ({ post }) => {
           <div className="card-actions flex justify-center items-center my-2">
             <button
               className="btn btn-error text-white"
+              onClick={() =>
+                dispatch({ type: CartActions.DECREMENT, payload: post })
+              }
               disabled={post.quantity === 0}>
               -
             </button>
             <p className="font-bold mx-2">{String(post.quantity)}</p>
-            <button className="btn btn-success text-white">+</button>
+            <button
+              className="btn btn-success text-white"
+              onClick={() =>
+                dispatch({ type: CartActions.INCREMENT, payload: post })
+              }>
+              +
+            </button>
           </div>
         </div>
       </div>

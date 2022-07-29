@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       await axios.get(`${API.baseURL}/data`).then((response) => {
-        setPosts(response.data.posts);
+        setPosts(response.data.products);
       });
     };
 
