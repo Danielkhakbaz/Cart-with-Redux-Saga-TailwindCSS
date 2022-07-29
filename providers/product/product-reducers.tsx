@@ -1,32 +1,30 @@
 import { combineReducers } from "redux";
 import { ProductActions } from "./product-actions";
 
-const initialState: any = [
-  {
-    products: [
-      {
-        id: 1,
-        title: "Product No.1",
-        quantity: 0,
-      },
-      {
-        id: 2,
-        title: "Product No.2",
-        quantity: 0,
-      },
-      {
-        id: 3,
-        title: "Product No.3",
-        quantity: 0,
-      },
-      {
-        id: 4,
-        title: "Product No.4",
-        quantity: 0,
-      },
-    ],
-  },
-];
+const initialState: any = {
+  products: [
+    {
+      id: 1,
+      title: "Product No.1",
+      quantity: 0,
+    },
+    {
+      id: 2,
+      title: "Product No.2",
+      quantity: 0,
+    },
+    {
+      id: 3,
+      title: "Product No.3",
+      quantity: 0,
+    },
+    {
+      id: 4,
+      title: "Product No.4",
+      quantity: 0,
+    },
+  ],
+};
 
 const ProductReducers = (
   state = initialState,

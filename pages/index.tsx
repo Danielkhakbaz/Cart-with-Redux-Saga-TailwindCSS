@@ -1,23 +1,27 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import type { NextPage } from "next";
 import Head from "next/head";
-import axios from "axios";
+// import axios from "axios";
 import Card from "../components/card/card";
-import API from "../services/api/api.json";
-import { Product } from "../types/product";
+import { RootState } from "../providers/product/product-store";
+// import API from "../services/api/api.json";
+// import { Product } from "../types/product";
 
 const Home: NextPage = () => {
-  const [products, setProducts] = useState<Array<Product>>([]);
+  const { products } = useSelector((state: RootState) => state.ProductReducers);
 
-  useEffect(() => {
-    const fetchAPI = async () => {
-      await axios.get(`${API.baseURL}/data`).then((response) => {
-        setProducts(response.data.products);
-      });
-    };
+  // const [products, setProducts] = useState<Array<Product>>([]);
 
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   const fetchAPI = async () => {
+  //     await axios.get(`${API.baseURL}/data`).then((response) => {
+  //       setProducts(response.data.products);
+  //     });
+  //   };
+
+  //   fetchAPI();
+  // }, []);
 
   return (
     <>
@@ -27,7 +31,7 @@ const Home: NextPage = () => {
 
       <>
         <div className="grid grid-cols-2 gap-20 py-10 justify-items-center">
-          {products.map((product) => (
+          {products.map((product: any) => (
             <Card product={product} key={product.title + product.id} />
           ))}
         </div>

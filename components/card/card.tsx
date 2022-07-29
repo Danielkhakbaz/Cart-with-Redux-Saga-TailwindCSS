@@ -15,12 +15,13 @@ const Card: React.FC<Props> = ({ product }) => {
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <Image
+            className="rounded-xl"
             src="https://placeimg.com/400/225/arch"
             width={304}
             height={171}
             layout="fixed"
+            priority
             alt="Image of Products"
-            className="rounded-xl"
           />
         </figure>
         <div className="card-body items-center text-center">
