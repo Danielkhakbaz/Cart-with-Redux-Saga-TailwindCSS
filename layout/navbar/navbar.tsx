@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="navbar bg-gray-800">
+      <nav className="navbar bg-gray-800 sticky top-0 z-50">
         <div className="container mx-auto">
           <div className="flex-1">
             <p className="normal-case text-xl text-white">Cart</p>
