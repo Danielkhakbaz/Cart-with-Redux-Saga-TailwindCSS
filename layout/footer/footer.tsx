@@ -8,6 +8,7 @@ const Footer: React.FC = () => {
         <Link href="/">Privacy Policy</Link>
         <Link href="/">Github</Link>
         <Link href="/">Twitter</Link>
+        <Link href="/I-DONT-KNOW-WHERE-YOU-ARE">404</Link>
       </footer>
     </>
   );
