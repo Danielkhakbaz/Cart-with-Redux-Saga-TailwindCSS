@@ -17,12 +17,12 @@ const Cart: React.FC = () => {
 
   return (
     <>
-      <section className="dropdown-content card card-compact w-80 bg-primary text-primary-content shadow p-2">
+      <section className="dropdown-content card card-compact w-80 bg-gray-500 text-primary-content shadow p-2">
         <div className="card-body">
           {addedProducts.length > 0 ? (
-            addedProducts.map((product: Product, index) => (
+            addedProducts.map((product: Product, index: number) => (
               <section key={product.title + product.id}>
-                <div className="card card-side shadow-xl">
+                <div className="card card-side bg-gray-300 flex flex-row justify-center items-center shadow-xl">
                   <figure>
                     <Image
                       src={`/assets/Image-No-${product.id}.jpg`}
@@ -46,9 +46,9 @@ const Cart: React.FC = () => {
                         disabled={product.quantity === 0}>
                         -
                       </button>
-                      <p className="font-bold mx-2">
-                        {String(product.quantity)}
-                      </p>
+                      <span className="font-bold text-slate-600 mx-3">
+                        {product.quantity}
+                      </span>
                       <button
                         className="btn btn-success text-white"
                         onClick={() =>
