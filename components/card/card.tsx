@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 import { ProductActions } from "../../providers/product/product-actions";
 import { Product } from "../../types/product";
 
@@ -13,7 +13,7 @@ const Card: React.FC<Props> = ({ product }) => {
   return (
     <>
       <div className="card w-96 bg-base-100 shadow-xl">
-        <figure className="px-10 pt-10">
+        <figure className="pt-10 px-10">
           <Image
             className="rounded-xl"
             src={`/assets/Image-No-${product.id}.jpg`}
@@ -35,7 +35,7 @@ const Card: React.FC<Props> = ({ product }) => {
               disabled={product.quantity === 0}>
               -
             </button>
-            <p className="font-bold mx-2">{String(product.quantity)}</p>
+            <p className="font-bold mx-2">{product.quantity}</p>
             <button
               className="btn btn-success text-white"
               onClick={() =>

@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
-import Layout from "../layout/layout";
 import { Store } from "../providers/product/product-store";
+import Layout from "../layout/layout";
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

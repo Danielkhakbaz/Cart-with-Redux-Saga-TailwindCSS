@@ -1,10 +1,11 @@
 // import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../providers/product/product-store";
 import type { NextPage } from "next";
 import Head from "next/head";
 // import axios from "axios";
 import Card from "../components/card/card";
-import { RootState } from "../providers/product/product-store";
+import { Product } from "../types/product";
 // import API from "../services/api/api.json";
 // import { Product } from "../types/product";
 
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
 
       <>
         <div className="grid grid-cols-2 gap-20 py-10 justify-items-center">
-          {products.map((product: any) => (
+          {products.map((product: Product) => (
             <Card product={product} key={product.title + product.id} />
           ))}
         </div>

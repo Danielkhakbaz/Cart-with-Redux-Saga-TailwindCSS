@@ -1,25 +1,27 @@
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { ProductActions } from "../../providers/product/product-actions";
+import { useAddedProducts } from "../../hooks/useAddedProducts";
+import { Product } from "../../types/product";
 
 const Cart: React.FC = () => {
-  const { products } = useSelector((state: any) => state.ProductReducers);
   const dispatch = useDispatch();
+  const addedProducts = useAddedProducts();
 
-  const nonZeroProducts = products.filter(
-    (product: any) => product.quantity !== 0
-  );
+  const handleTheDivider = (index: number) => {
+    if (addedProducts[index + 1] !== undefined) {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <>
-      <section
-        tabIndex={0}
-        className="dropdown-content card card-compact w-80 p-2 shadow bg-primary text-primary-content">
+      <section className="dropdown-content card card-compact w-80 bg-primary text-primary-content shadow p-2">
         <div className="card-body">
-          {nonZeroProducts.length > 0 ? (
-            nonZeroProducts.map((product: any) => (
-              <>
+          {addedProducts.length > 0 ? (
+            addedProducts.map((product: Product, index) => (
+              <section key={product.title + product.id}>
                 <div className="card card-side shadow-xl">
                   <figure>
                     <Image
@@ -32,7 +34,7 @@ const Cart: React.FC = () => {
                     />
                   </figure>
                   <div className="card-body">
-                    <div className="card-actions justify-end items-center">
+                    <div className="card-actions items-center justify-end">
                       <button
                         className="btn btn-error text-white"
                         onClick={() =>
@@ -60,8 +62,8 @@ const Cart: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="divider" />
-              </>
+                {handleTheDivider(index) && <div className="divider" />}
+              </section>
             ))
           ) : (
             <p className="text-lg font-bold text-center">The cart is Empty!</p>
