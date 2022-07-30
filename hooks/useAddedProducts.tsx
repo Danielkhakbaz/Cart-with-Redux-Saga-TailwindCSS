@@ -5,5 +5,5 @@ import { Product } from "../types/product";
 export const useAddedProducts = () => {
   const { products } = useSelector((state: RootState) => state.ProductReducers);
 
-  return products.filter((product: Product) => product.quantity !== 0);
+  return products?.filter((product: Product) => product.quantity !== 0);
 };

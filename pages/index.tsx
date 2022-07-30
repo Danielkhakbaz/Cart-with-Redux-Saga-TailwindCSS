@@ -1,28 +1,21 @@
-// import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { RootState } from "../providers/product/product-store";
 import type { NextPage } from "next";
 import Head from "next/head";
-// import axios from "axios";
 import Card from "../components/card/card";
+import Loader from "../components/loader/loader";
 import { Product } from "../types/product";
-// import API from "../services/api/api.json";
-// import { Product } from "../types/product";
+import { ProductActions } from "../providers/product/product-actions";
 
 const Home: NextPage = () => {
   const { products } = useSelector((state: RootState) => state.ProductReducers);
+  const dispatch = useDispatch();
 
-  // const [products, setProducts] = useState<Array<Product>>([]);
-
-  // useEffect(() => {
-  //   const fetchAPI = async () => {
-  //     await axios.get(`${API.baseURL}/data`).then((response) => {
-  //       setProducts(response.data.products);
-  //     });
-  //   };
-
-  //   fetchAPI();
-  // }, []);
+  useEffect(() => {
+    dispatch({ type: ProductActions.GET_PRODUCTS });
+  }, [dispatch]);
 
   return (
     <>
@@ -32,10 +25,12 @@ const Home: NextPage = () => {
 
       <>
         <div className="grid grid-cols-2 gap-20 py-10 justify-items-center">
-          {products.map((product: Product) => (
-            <Card product={product} key={product.title + product.id} />
-          ))}
+          {products &&
+            products.map((product: Product) => (
+              <Card product={product} key={product.title + product.id} />
+            ))}
         </div>
+        {!products && <Loader />}
       </>
     </>
   );

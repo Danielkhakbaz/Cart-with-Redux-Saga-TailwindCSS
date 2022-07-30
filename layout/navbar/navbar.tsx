@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
                     />
                   </svg>
                   <span className="badge badge-sm indicator-item">
-                    {addedProducts.length}
+                    {addedProducts ? addedProducts.length : 0}
                   </span>
                 </div>
               </label>

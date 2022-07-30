@@ -19,7 +19,7 @@ const Cart: React.FC = () => {
     <>
       <section className="dropdown-content card card-compact w-80 bg-gray-500 text-primary-content shadow p-2">
         <div className="card-body">
-          {addedProducts.length > 0 ? (
+          {addedProducts?.length > 0 ? (
             addedProducts.map((product: Product, index: number) => (
               <section key={product.title + product.id}>
                 <div className="card card-side bg-gray-300 flex flex-row justify-center items-center shadow-xl">
